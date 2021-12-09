@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration>
+<configuration>
+
+	<include resource="org/springframework/boot/logging/logback/defaults.xml" />
+	<include resource="org/springframework/boot/logging/logback/console-appender.xml" />
+	<!-- <include resource="org/springframework/boot/logging/logback/file-appender.xml" /> -->
+
+	<!-- Open source package -->
+	<logger name="org.springframework" level="info" />
+	<logger name="lombok" level="info" />
+	<logger name="org" level="info" />
+	<logger name="springfox" level="info" />
+	<logger name="com.ulisesbocchio" level="error" />
+	<logger name="com.zaxxer" level="info" />
+	<logger name="com.github." level="debug" />
+	<logger name="org.jsoup." level="info" />
+	<logger name="org.owasp.esapi." level="info" />
+	<logger name="org.owasp.esapi." level="info" />
+
+
+	<!-- Project logging level -->
+	<logger name="io.gitplanner" level="debug" />
+
+	<springProfile name="local">
+		<root level="DEBUG">
+			<appender-ref ref="CONSOLE" />
+		</root>
+	</springProfile>
+
+	<springProfile name="dev">
+		<root level="INFO">
+			<appender-ref ref="CONSOLE" />
+			<!-- <appender-ref ref="FILE" /> -->
+		</root>
+	</springProfile>
+
+	<springProfile name="stage">
+		<root level="INFO">
+			<appender-ref ref="CONSOLE" />
+			<!-- <appender-ref ref="FILE" /> -->
+		</root>
+	</springProfile>
+
+	<springProfile name="prod">
+		<logger name="org.springframework" level="warn" />
+		<root level="INFO">
+			<appender-ref ref="CONSOLE" />
+			<!-- <appender-ref ref="FILE" /> -->
+		</root>
+	</springProfile>
+
+</configuration>

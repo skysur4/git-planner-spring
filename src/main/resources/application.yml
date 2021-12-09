@@ -1,0 +1,12 @@
+server:
+    port: 3001
+
+jasypt:
+  encryptor:
+    bean: jasyptStringEncryptor
+    password: password
+
+oauth:
+  github:
+    client_id: ENC(KhXULzirCCYzfvDytteuARq6r/NRrNhEPK6J3o6Mlwc=)
+    client_secret: ENC(iwTdTjh7pFlsfDN3Z48MZR7m1poUZjzIdEYEXo4TQkUyaGHxPt/DfDakSpGMsfsV3voqLDA3SWY=)
